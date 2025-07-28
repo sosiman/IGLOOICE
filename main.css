@@ -1,0 +1,99 @@
+body, html {
+  margin: 0; padding: 0; width: 100vw; height: 100vh;
+  font-family: 'Inter', sans-serif; background: #8B9DC3;
+  overflow: hidden; color: #fff;
+}
+#main-container {
+  width: 100vw; height: 100vh; position: relative;
+}
+.header {
+  position: absolute; top: 30px; left: 40px; z-index: 20;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.logo {
+  font-size: 42px; font-weight: 700; letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.manifesto {
+  text-align: left; max-width: 350px;
+}
+.manifesto-title {
+  font-size: 13px; font-weight: 400; opacity: 0.7; letter-spacing: 1px;
+}
+.manifesto-text {
+  font-size: 15px; line-height: 1.5;
+}
+
+#open-menu {
+  position: absolute; top: 30px; right: 40px; z-index: 30;
+  font-size: 28px; border: none; background: rgba(30,30,40,0.4);
+  color: #fff; padding: 10px 18px; border-radius: 12px;
+  cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+  transition: background 0.2s;
+}
+#open-menu:hover { background: rgba(50,50,70,0.7); }
+
+.overlay {
+  position: absolute; top: 0; right: 0; width: 350px; max-width: 95vw; height: 100%;
+  background: rgba(18,24,38,0.89); color: #fff; z-index: 100;
+  box-shadow: -6px 0 25px 0 rgba(20,20,30,0.28);
+  display: flex; flex-direction: column;
+  animation: fadeIn 0.4s;
+}
+.overlay nav { padding: 38px 30px 10px 30px; flex: 1; }
+.overlay h2 { font-size: 20px; margin-bottom: 20px; letter-spacing: 1px; }
+.overlay ul { list-style: none; padding: 0; margin: 0; }
+.overlay li {
+  font-size: 17px; margin: 0 0 16px 0; cursor: pointer;
+  display: flex; align-items: center; gap: 12px;
+  border-radius: 8px; transition: background 0.14s;
+  padding: 8px 10px;
+}
+.overlay li:hover, .overlay li.active { background: rgba(255,255,255,0.10); }
+
+#close-menu, #close-panel {
+  align-self: flex-end;
+  font-size: 22px; margin: 8px 12px; background: none; border: none; color: #fff; cursor: pointer;
+}
+#tools-panel .tools-content { padding: 40px 28px 28px 28px; }
+#tools-panel h3 { font-size: 21px; margin-bottom: 16px; }
+#tools-list { list-style: disc inside; color: #e6e6e6; font-size: 15.5px; }
+#tools-list li { margin-bottom: 12px; }
+
+.scroll-down {
+  position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+  font-size: 18px; opacity: 0.85; letter-spacing: 1px;
+  z-index: 20; pointer-events: none;
+}
+
+.footer {
+  position: absolute; bottom: 15px; left: 30px; z-index: 22; font-size: 15px;
+  display: flex; flex-direction: column; gap: 6px;
+  color: #fff; opacity: 0.9;
+}
+.sound-control {
+  margin-top: 5px; cursor: pointer; font-size: 17px;
+  transition: opacity 0.23s;
+}
+.sound-control:hover { opacity: 0.68; }
+
+#three-canvas {
+  position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+  display: block; z-index: 1;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; right: -100px; }
+  to { opacity: 1; right: 0; }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .header { top: 16px; left: 12px; }
+  .logo { font-size: 27px; }
+  .manifesto { max-width: 220px; }
+  #open-menu { top: 14px; right: 8px; font-size: 20px; }
+  .overlay { width: 97vw; max-width: 97vw; }
+  #tools-panel .tools-content, .overlay nav { padding: 26px 13px 10px 13px; }
+}

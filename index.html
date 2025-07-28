@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>IGLOO - IA Showcase 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="main-container">
+    <!-- Logo & Manifesto -->
+    <header class="header">
+      <div class="logo">IGLOO</div>
+      <div class="manifesto">
+        <div class="manifesto-title">////////// Manifesto</div>
+        <div class="manifesto-text">
+          Our mission is to create the largest onchain community, <br>
+          empowering crypto consumer crypto revolution.
+        </div>
+      </div>
+    </header>
+
+    <!-- Botón Menú Categorías -->
+    <button id="open-menu" title="Explora las categorías">☰</button>
+
+    <!-- Overlay Menú Categorías -->
+    <aside id="category-menu" class="overlay hidden">
+      <nav>
+        <h2>Categorías de Herramientas IA</h2>
+        <ul id="cat-list">
+          <!-- Categorías aquí (JS) -->
+        </ul>
+      </nav>
+      <button id="close-menu" title="Cerrar menú">✕</button>
+    </aside>
+
+    <!-- Panel lateral para herramientas -->
+    <aside id="tools-panel" class="overlay hidden">
+      <div class="tools-content">
+        <h3 id="tools-title"></h3>
+        <ul id="tools-list"></ul>
+      </div>
+      <button id="close-panel" title="Cerrar panel">✕</button>
+    </aside>
+
+    <!-- Mensaje Scroll Down -->
+    <div class="scroll-down">Scroll down to discover.</div>
+    <!-- Copyright + Sound -->
+    <footer class="footer">
+      <div>
+        <span>// Copyright © 2024</span> &nbsp; 
+        <span>Igloo, Inc.</span> &nbsp; 
+        <span>All Rights Reserved.</span>
+      </div>
+      <div class="sound-control" id="sound-control">🔊 Sound: Off</div>
+    </footer>
+
+    <!-- Escena 3D Three.js -->
+    <canvas id="three-canvas"></canvas>
+  </div>
+
+  <!-- Librerías JS -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="igloo-scene.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
