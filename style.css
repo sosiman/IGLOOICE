@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', Arial, sans-serif;
+  background: linear-gradient(#d6eaff, #7cc2f9 70%, #ffffff);
+}
+.logo {
+  position: absolute;
+  top: 24px;
+  left: 36px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #222;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,0.7);
+  padding: 8px 18px;
+  border-radius: 1em;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.manifesto {
+  position: absolute;
+  top: 24px;
+  right: 36px;
+  color: #222;
+  background: rgba(255,255,255,0.8);
+  padding: 16px 24px;
+  border-radius: 1em;
+  min-width: 260px;
+  max-width: 400px;
+  font-size: 1rem;
+  z-index: 10;
+}
+.manifesto .title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #157cbf;
+}
+.copyright {
+  position: absolute;
+  bottom: 32px;
+  left: 36px;
+  color: #444;
+  font-size: 0.95em;
+  z-index: 10;
+  background: rgba(255,255,255,0.6);
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+.sound-control {
+  position: absolute;
+  bottom: 32px;
+  left: 240px;
+  font-size: 0.98em;
+  color: #1a2228;
+  background: rgba(255,255,255,0.75);
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background .2s;
+}
+.sound-control:hover {
+  background: #bde0fe;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 0; right: 0;
+  text-align: center;
+  color: #157cbf;
+  font-size: 1.15em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,0.5);
+  padding: 8px;
+  border-radius: 12px;
+  width: 300px;
+  margin: 0 auto;
+  z-index: 10;
+}
+#three-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1;
+}
+#category-panel {
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  background: rgba(255,255,255,0.97);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+  padding: 32px 24px 20px 24px;
+  z-index: 20;
+  min-width: 320px;
+  max-width: 480px;
+  max-height: 70vh;
+  overflow-y: auto;
+  transition: opacity .2s, transform .2s;
+}
+#category-panel.hidden { opacity: 0; pointer-events: none; transform: translateY(-16px);}
+#close-panel {
+  margin-top: 16px;
+  background: #228be6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .manifesto, .logo, .copyright, .sound-control, #category-panel {
+    left: 12px !important;
+    right: 12px !important;
+    top: auto; bottom: 20px;
+    font-size: 0.97em;
+    padding: 8px 10px;
+    min-width: unset; max-width: unset;
+  }
+  .manifesto { top: 80px; }
+  #category-panel { top: 120px; }
+}
